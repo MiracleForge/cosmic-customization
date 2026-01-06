@@ -1,0 +1,9 @@
+if [ "$TERM" = "xterm-kitty" ] || [[ "$TERM" == *"-256color" ]]; then
+PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]"  # título do terminal
+PS1+="\[\e[38;5;208m\]\u\[\e[0m\]"  # usuário laranja
+PS1+="@\[\e[38;5;196m\]\h\[\e[0m\]"  # host vermelho
+PS1+=":\[\e[38;5;46m\]\w\[\e[0m\]"   # caminho verde
+PS1+=" \[\e[38;5;208m▸\e[0m\] "       # símbolo tipo HUD laranja
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
