@@ -1,0 +1,205 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[NERV MAGI SYSTEM](bold fg:color_eva_red) [STATUS: ACTIVE](bold fg:color_eva_green)
+[](color_eva_red)\
+$os\
+$username\
+[](bg:color_eva_orange fg:color_eva_red)\
+$directory\
+[](fg:color_eva_orange bg:color_eva_yellow)\
+$git_branch\
+$git_status\
+[](fg:color_eva_yellow bg:color_eva_green)\
+$c\
+$cpp\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:color_eva_green bg:color_eva_dark)\
+$docker_context\
+$conda\
+$pixi\
+[](fg:color_eva_dark bg:color_eva_bg)\
+$time\
+$cmd_duration\
+[ ](fg:color_eva_bg)\
+$line_break$character"""
+
+palette = 'evangelion'
+
+[palettes.evangelion]
+color_eva_red = '#FF0000'
+color_eva_orange = '#FF6600'
+color_eva_yellow = '#FFAA00'
+color_eva_green = '#00FF00'
+color_eva_bg = '#0a0a0a'
+color_eva_dark = '#1a1a1a'
+color_eva_text = '#00FF41'
+color_eva_alert = '#FF0000'
+color_eva_warn = '#FFAA00'
+color_eva_blue = '#0099FF'
+
+[os]
+disabled = false
+style = "bg:color_eva_red fg:color_eva_bg bold"
+
+[os.symbols]
+Windows = "▲ WIN-NT"
+Ubuntu = "▲ UBUNTU"
+SUSE = "▲ SUSE"
+Raspbian = "▲ RPI-OS"
+Mint = "▲ MINT"
+Macos = "▲ DARWIN"
+Manjaro = "▲ MANJARO"
+Linux = "▲ LINUX"
+Gentoo = "▲ GENTOO"
+Fedora = "▲ FEDORA"
+Alpine = "▲ ALPINE"
+Amazon = "▲ AMAZON"
+Android = "▲ ANDROID"
+Arch = "▲ ARCH"
+Artix = "▲ ARTIX"
+EndeavourOS = "▲ ENDEAVOR"
+CentOS = "▲ CENTOS"
+Debian = "▲ DEBIAN"
+Redhat = "▲ REDHAT"
+RedHatEnterprise = "▲ REDHAT"
+Pop = "▲ POP!_OS"
+
+[username]
+show_always = true
+style_user = "bg:color_eva_red fg:color_eva_bg bold"
+style_root = "bg:color_eva_red fg:color_eva_alert bold"
+format = '[ ⬢ $user@NERV ]($style)'
+
+[directory]
+style = "fg:color_eva_bg bg:color_eva_orange bold"
+format = "[ ▶ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "▸▸▸/"
+repo_root_style = "fg:color_eva_bg bg:color_eva_orange bold underline"
+
+[directory.substitutions]
+"Documents" = "◢ DOC ◣"
+"Downloads" = "◢ DWN ◣"
+"Music" = "◢ MUS ◣"
+"Pictures" = "◢ PIC ◣"
+"Developer" = "◢ DEV ◣"
+"Desktop" = "◢ DSK ◣"
+"Videos" = "◢ VID ◣"
+".config" = "◢ CFG ◣"
+"~" = "◢ HOME ◣"
+
+[git_branch]
+symbol = "⬡ BRANCH"
+style = "bg:color_eva_yellow"
+format = '[[ $symbol ▸ $branch ](fg:color_eva_bg bg:color_eva_yellow bold)]($style)'
+
+[git_status]
+style = "bg:color_eva_yellow"
+format = '[[($all_status$ahead_behind )](fg:color_eva_bg bg:color_eva_yellow bold)]($style)'
+ahead = '⇈${count}'
+behind = '⇊${count}'
+diverged = '⇕${ahead_count}⇵${behind_count}'
+conflicted = '[◆CONF]'
+deleted = '[✘RM]'
+renamed = '[≫MV]'
+modified = '[!MOD]'
+staged = '[+ADD]'
+untracked = '[?NEW]'
+stashed = '[⚑STH]'
+
+[nodejs]
+symbol = "⬢ NODE.JS"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[c]
+symbol = "⬢ C-LANG"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ $version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[cpp]
+symbol = "⬢ C++"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ $version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[rust]
+symbol = "⬢ RUST"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[golang]
+symbol = "⬢ GOLANG"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[php]
+symbol = "⬢ PHP"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[java]
+symbol = "⬢ JAVA"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[kotlin]
+symbol = "⬢ KOTLIN"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[haskell]
+symbol = "⬢ HASKELL"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[python]
+symbol = "⬢ PYTHON"
+style = "bg:color_eva_green"
+format = '[[ $symbol ▸ v$version ](fg:color_eva_bg bg:color_eva_green bold)]($style)'
+
+[docker_context]
+symbol = "◢◣ DOCKER"
+style = "bg:color_eva_dark"
+format = '[[ $symbol ▸ $context ](fg:color_eva_text bg:color_eva_dark bold)]($style)'
+
+[conda]
+symbol = "◢◣ CONDA"
+style = "bg:color_eva_dark"
+format = '[[ $symbol ▸ $environment ](fg:color_eva_text bg:color_eva_dark bold)]($style)'
+
+[pixi]
+symbol = "◢◣ PIXI"
+style = "bg:color_eva_dark"
+format = '[[ $symbol ▸ $environment ](fg:color_eva_text bg:color_eva_dark bold)]($style)'
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "bg:color_eva_bg"
+format = '[[  ◢◤ $time ◥◣  ](fg:color_eva_text bg:color_eva_bg bold)]($style)'
+
+[cmd_duration]
+min_time = 1000
+style = "bg:color_eva_bg fg:color_eva_warn bold"
+format = '[[◢EXEC:$duration◣](fg:color_eva_warn bg:color_eva_bg bold)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[▶▶▶](bold color_eva_green)'
+error_symbol = '[✘✘✘](bold color_eva_alert)[ABORT](bold fg:color_eva_alert)'
+vimcmd_symbol = '[◀◀◀](bold color_eva_blue)[NORMAL]'
+vimcmd_replace_one_symbol = '[▲](bold color_eva_warn)[REPLACE]'
+vimcmd_replace_symbol = '[▲▲](bold color_eva_warn)[REPLACE-ALL]'
+vimcmd_visual_symbol = '[◆◆](bold color_eva_yellow)[VISUAL]'
+
